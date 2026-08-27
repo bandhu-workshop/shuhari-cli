@@ -220,3 +220,5 @@ __marimo__/
 # custom ignore rules
 localdev/
 *.db
+# Local reference PDFs — not shipped
+docs/**/*.pdf
