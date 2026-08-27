@@ -24,7 +24,7 @@ This is an early-stage, actively developed project — see
 ### Install
 
 ```bash
-git clone https://github.com/dinabandhu50/shuhari-cli.git
+git clone https://github.com/bandhu-workshop/shuhari-cli.git
 cd shuhari-cli
 uv sync
 ```
