@@ -166,12 +166,13 @@ done; it's the same gate the `CI` GitHub Actions workflow runs.
 ### Git and GitHub
 
 - Always use the `git`/`gh` CLI.
-- The repo is public, with a solo-developer workflow: pull requests are
-  required into `main`, 0 approvals are required, CI is the merge gate,
-  squash-merge only.
+- The repo lives at `bandhu-workshop/shuhari-cli` and is public, with a
+  solo-developer workflow: pull requests are required into `main`, 0
+  approvals are required, CI is the merge gate. Squash- or rebase-merge
+  only (merge commits are disabled; `main` keeps a linear history).
 - Branch names: `feat/…`, `fix/…`, `refactor/…`, `docs/…`, `chore/…`.
-- The PR title becomes the squash commit message on `main` — write it as
-  a proper commit message (e.g. `feat: add hello command`).
+- For a squash merge the PR title becomes the commit message on `main` —
+  write it as a proper commit message (e.g. `feat: add hello command`).
 - Full rationale and setup checklist:
   `docs/github-workflow/repo-branch-protection.md`.
 - Never add a `Co-Authored-By: Claude …` (or any AI) trailer to commit
