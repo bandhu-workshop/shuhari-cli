@@ -1,16 +1,17 @@
 # SPDX-FileCopyrightText: 2026 Dinabandhu Behera
 # SPDX-License-Identifier: MIT
 
-import logging
 import sys
+
+from loguru import logger
+
+_FORMAT = "{time:YYYY-MM-DD HH:mm:ss} {level: <8} {name}: {message}"
 
 
 def setup_logging(level: str = "INFO") -> None:
-    root = logging.getLogger()
-    root.setLevel(level)
-    if not root.handlers:
-        handler = logging.StreamHandler(sys.stdout)
-        handler.setFormatter(
-            logging.Formatter("%(asctime)s %(levelname)s %(name)s: %(message)s")
-        )
-        root.addHandler(handler)
+    """Configure loguru's global logger with a single stdout sink.
+
+    Idempotent: repeated calls replace the sink rather than stacking them.
+    """
+    logger.remove()
+    logger.add(sys.stdout, level=level, format=_FORMAT)
